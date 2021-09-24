@@ -144,7 +144,7 @@ public class ConceptVuforiaDriveToTargetWebcam extends LinearOpMode
                         targetName  = trackable.getName();
                         VectorF trans = targetPose.getTranslation();
 
-                        // Extract the X & Y components of the offset of the target relative to the robot
+                        // Extract the X & Y org.firstinspires.ftc.teamcode.components of the offset of the target relative to the robot
                         double targetX = trans.get(0) / MM_PER_INCH; // Image X axis
                         double targetY = trans.get(2) / MM_PER_INCH; // Image Z axis
 
