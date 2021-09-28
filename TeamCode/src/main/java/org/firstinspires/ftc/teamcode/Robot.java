@@ -53,7 +53,7 @@ import org.firstinspires.ftc.teamcode.components.Drive;
  */
 
 @TeleOp(name="Basic: Iterative OpMode", group="Iterative Opmode")
-@Disabled
+
 public class Robot extends OpMode
 {
     // Declare OpMode members.
