@@ -40,7 +40,7 @@ public class Arm {
         arm.setPower(-1);//-1
         this.arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
-    
+
     public void armOff(){
         arm.setPower(0);
     }
