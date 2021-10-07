@@ -16,5 +16,9 @@ public class Spinner {
     public void Off(){
         this.spinnerMotor.setPower(0);
     }
+    public void Backwards(){
+        this.spinnerMotor.setPower(-1);
+    }
+
 }
 
