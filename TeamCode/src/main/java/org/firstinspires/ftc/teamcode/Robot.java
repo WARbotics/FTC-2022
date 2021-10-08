@@ -37,6 +37,8 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 import org.firstinspires.ftc.teamcode.components.Drive;
+import org.firstinspires.ftc.teamcode.components.Intake;
+import org.firstinspires.ftc.teamcode.components.Spinner;
 
 /**
  * This file contains an example of an iterative (Non-Linear) "OpMode".
@@ -57,11 +59,20 @@ import org.firstinspires.ftc.teamcode.components.Drive;
 public class Robot extends OpMode
 {
     // Declare OpMode members.
+    //Drive
     DcMotor leftFront;
     DcMotor leftBack;
     DcMotor rightFront;
     DcMotor rightBack;
     Drive drive;
+
+    //Intake
+    DcMotor intakeMotor;
+    Intake intake;
+
+    //Spinner
+    DcMotor spinnerMotor;
+    Spinner spinner;
 
 
     /*
@@ -71,6 +82,7 @@ public class Robot extends OpMode
     public void init() {
         telemetry.addData("Status", "Initialized");
 
+        //Drivetrain
         leftFront = hardwareMap.dcMotor.get("leftFront");
         //leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
         leftBack = hardwareMap.dcMotor.get("leftBack");
@@ -81,6 +93,14 @@ public class Robot extends OpMode
         drive = new Drive(leftFront,leftBack,rightFront,rightBack);
         // Tell the driver that initialization is complete.
         telemetry.addData("Status", "Initialized");
+
+        //Intake
+        intakeMotor = hardwareMap.dcMotor.get("intakeMotor");
+        intake = new Intake(intakeMotor);
+
+        //Spinner
+        spinnerMotor = hardwareMap.dcMotor.get("spinnerMotor");
+        spinner = new Spinner(spinnerMotor);
     }
 
     /*
