@@ -125,6 +125,30 @@ public class Robot extends OpMode
         // Setup a variable for each drive wheel to save power level for telemetry
         drive.driveCartesian(gamepad1.left_stick_x,gamepad1.left_stick_y,gamepad1.right_stick_x);
 
+        //Intake Buttons
+        if(gamepad1.right_bumper){
+            intake.intakeForward();
+        }else{
+            intake.intakeOff();
+        }
+        if(gamepad1.left_bumper){
+            intake.intakeBackwards();
+        }else{
+            intake.intakeOff();
+        }
+
+        //Spinner Buttons
+        if(gamepad1.dpad_right){
+            spinner.On();
+        }else{
+            spinner.Off();
+        }
+        if(gamepad1.dpad_left){
+            spinner.Backwards();
+        }else{
+            spinner.Off();
+        }
+
 
     }
 
