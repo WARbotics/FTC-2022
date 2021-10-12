@@ -29,11 +29,7 @@ public class Arm {
             arm.setTargetPosition(-550);
             this.arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         }
-        public void low() {
-            arm.setPower(-1);
-            arm.setTargetPosition(-550);
-            this.arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        }
+
         public void Off() {
             arm.setPower(0);
         }

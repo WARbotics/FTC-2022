@@ -39,6 +39,7 @@ import com.qualcomm.robotcore.util.Range;
 import org.firstinspires.ftc.teamcode.components.Drive;
 import org.firstinspires.ftc.teamcode.components.Intake;
 import org.firstinspires.ftc.teamcode.components.Spinner;
+import org.firstinspires.ftc.teamcode.components.Arm;
 
 /**
  * This file contains an example of an iterative (Non-Linear) "OpMode".
@@ -74,6 +75,10 @@ public class Robot extends OpMode
     DcMotor spinnerMotor;
     Spinner spinner;
 
+    //Arm
+    DcMotor armMotor;
+    Arm arm;
+
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -101,6 +106,10 @@ public class Robot extends OpMode
         //Spinner
         spinnerMotor = hardwareMap.dcMotor.get("spinnerMotor");
         spinner = new Spinner(spinnerMotor);
+
+        //Arm
+        armMotor = hardwareMap.dcMotor.get("armMotor");
+        arm = new Arm(armMotor);
     }
 
     /*
@@ -147,6 +156,20 @@ public class Robot extends OpMode
             spinner.Backwards();
         }else{
             spinner.Off();
+        }
+
+        //Arm Buttons
+        if(gamepad1.y){
+            arm.high();
+        }
+        if(gamepad1.b){
+            arm.drive();
+        }
+        if(gamepad1.a){
+            arm.ground();
+        }
+        if(gamepad1.x){
+            arm.medium();
         }
 
 
