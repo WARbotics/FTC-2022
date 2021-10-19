@@ -77,6 +77,7 @@ public class Robot extends OpMode
 
     //Arm
     DcMotor armMotor;
+    DcMotor armMotor2;
     Arm arm;
 
 
@@ -109,7 +110,7 @@ public class Robot extends OpMode
 
         //Arm
         armMotor = hardwareMap.dcMotor.get("armMotor");
-        arm = new Arm(armMotor);
+        arm = new Arm(armMotor,armMotor2);
     }
 
     /*
