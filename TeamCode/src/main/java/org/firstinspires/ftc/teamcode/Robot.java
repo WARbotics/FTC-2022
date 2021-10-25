@@ -160,18 +160,17 @@ public class Robot extends OpMode
         }
 
         //Arm Buttons
-        if(gamepad1.y){
-            arm.high();
-        }
         if(gamepad1.b){
-            arm.drive();
-        }
-        if(gamepad1.a){
-            arm.ground();
+            arm.Up();
+        }else{
+            arm.off();
         }
         if(gamepad1.x){
-            arm.medium();
+            arm.Down();
+        }else{
+            arm.off();
         }
+        
 
 
     }
