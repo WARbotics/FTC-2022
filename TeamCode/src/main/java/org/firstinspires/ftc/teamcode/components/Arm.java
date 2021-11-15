@@ -22,7 +22,7 @@ public class Arm {
     }
         public void off() {
             armMotor.setPower(0);
-            armMotor2.setPower(-1);
+            armMotor2.setPower(0);
         }
 
     }

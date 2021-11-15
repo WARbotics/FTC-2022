@@ -110,6 +110,7 @@ public class Robot extends OpMode
 
         //Arm
         armMotor = hardwareMap.dcMotor.get("armMotor");
+        armMotor2 = hardwareMap.dcMotor.get("armMotor2");
         arm = new Arm(armMotor,armMotor2);
     }
 
@@ -134,6 +135,9 @@ public class Robot extends OpMode
     public void loop() {
         // Setup a variable for each drive wheel to save power level for telemetry
         drive.driveCartesian(gamepad1.left_stick_x,gamepad1.left_stick_y,gamepad1.right_stick_x);
+
+        telemetry.addData("arm2", armMotor2.getCurrentPosition());
+        telemetry.addData("arm", armMotor.getCurrentPosition());
 
         //Intake Buttons
         if(gamepad1.right_bumper){
