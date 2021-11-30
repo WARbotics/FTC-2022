@@ -136,8 +136,6 @@ public class Robot extends OpMode
         // Setup a variable for each drive wheel to save power level for telemetry
         drive.driveCartesian(gamepad1.left_stick_x,gamepad1.left_stick_y,gamepad1.right_stick_x);
 
-        telemetry.addData("arm2", armMotor2.getCurrentPosition());
-        telemetry.addData("arm", armMotor.getCurrentPosition());
 
         //Intake Buttons
         if(gamepad1.right_bumper){
@@ -164,17 +162,16 @@ public class Robot extends OpMode
         }
 
         //Arm Buttons
-        if(gamepad1.b){
+        if(gamepad1.a){
             arm.Up();
         }else{
             arm.off();
         }
-        if(gamepad1.x){
+        if(gamepad1.b){
             arm.Down();
         }else{
             arm.off();
         }
-        
 
 
     }
